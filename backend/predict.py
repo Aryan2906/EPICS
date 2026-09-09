@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import torch
 import cv2
 import numpy as np
@@ -73,3 +74,17 @@ def predict_mri(
 if __name__ == "__main__":
     test_image = "image.jpg"
     predict_mri(test_image)
+=======
+from model import DementiaSNN
+import torch
+
+model = DementiaSNN()
+
+dummy = torch.randn(1, 1, 128, 128)
+
+logits = model(dummy)
+
+pred = torch.argmax(logits, dim=1)
+
+print("Predicted class index:", pred.item())
+>>>>>>> Stashed changes
